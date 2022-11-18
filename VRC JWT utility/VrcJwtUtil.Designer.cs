@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VrcJwtUtil));
             this.buttonFixedOneToken = new System.Windows.Forms.Button();
             this.groupBoxOneTokenResults = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,17 +40,19 @@
             this.textBoxPublicKeyForFixedToken = new System.Windows.Forms.TextBox();
             this.textBoxSpec = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBoxOneTokenResults.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonFixedOneToken
             // 
             this.buttonFixedOneToken.Font = new System.Drawing.Font("メイリオ", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonFixedOneToken.Location = new System.Drawing.Point(24, 54);
+            this.buttonFixedOneToken.Location = new System.Drawing.Point(129, 54);
             this.buttonFixedOneToken.Name = "buttonFixedOneToken";
-            this.buttonFixedOneToken.Size = new System.Drawing.Size(314, 48);
+            this.buttonFixedOneToken.Size = new System.Drawing.Size(245, 48);
             this.buttonFixedOneToken.TabIndex = 0;
-            this.buttonFixedOneToken.Text = "Generate new JWT token";
+            this.buttonFixedOneToken.Text = "Generate new token";
             this.buttonFixedOneToken.UseVisualStyleBackColor = true;
             this.buttonFixedOneToken.Click += new System.EventHandler(this.ButtonFixedOneToken_Click);
             // 
@@ -166,19 +169,33 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Specs";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::VRC_JWT_utility.Properties.Resources.logo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(35, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 108);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // VrcJwtUtil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 880);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxSpec);
             this.Controls.Add(this.groupBoxOneTokenResults);
             this.Controls.Add(this.buttonFixedOneToken);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VrcJwtUtil";
             this.Text = "VRC JWT utility";
             this.groupBoxOneTokenResults.ResumeLayout(false);
             this.groupBoxOneTokenResults.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +214,6 @@
         private Button buttonClipboadTokenWithUrlForFixedToken_Click;
         private TextBox textBoxSpec;
         private Label label1;
+        private PictureBox pictureBox1;
     }
 }

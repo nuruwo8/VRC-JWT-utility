@@ -7,6 +7,11 @@ using Org.BouncyCastle.Math;
 
 namespace VRC_JWT_utility
 {
+    /// <summary>
+    /// code by kagasu-san. 
+    /// to quote
+    /// https://kagasu.hatenablog.com/entry/2017/02/02/132741
+    /// </summary>
     public static class RsaPemMaker
     {
         public static string GetPrivatePemString(RSAParameters p)
