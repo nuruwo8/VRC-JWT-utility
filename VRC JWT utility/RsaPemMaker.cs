@@ -8,7 +8,7 @@ using Org.BouncyCastle.Math;
 namespace VRC_JWT_utility
 {
     /// <summary>
-    /// code by kagasu-san. 
+    /// code by kagasu-san. (quote is permitted)
     /// to quote
     /// https://kagasu.hatenablog.com/entry/2017/02/02/132741
     /// </summary>
