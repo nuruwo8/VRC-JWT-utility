@@ -8,7 +8,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
-    <DebugType>none</DebugType>
+    <DebugType>full</DebugType>
     <PackageIcon>logo.png</PackageIcon>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
   </PropertyGroup>

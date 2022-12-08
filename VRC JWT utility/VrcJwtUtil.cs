@@ -16,14 +16,14 @@ Token expiration period: forever
         public VrcJwtUtil()
         {
             InitializeComponent();
-            textBoxSpec.Text = SPEC_TEXT;   
+            textBoxSpec.Text = SPEC_TEXT;
         }
 
         /// <summary>
         /// generate RSA keys.
         /// </summary>
         /// <returns>RSA keys PEM format (private key , public key) </returns>
-        private static (string,string) GenerateRsaKeyPair()
+        private static (string, string) GenerateRsaKeyPair()
         {
             var rsa = RSA.Create(2048); //generate RSA keys
             //convert PEM format
@@ -38,7 +38,7 @@ Token expiration period: forever
         /// <param name="validPeriodMinutes"></param>
         /// <param name="claims"></param>
         /// <returns></returns>
-        private static string GenerateJwtToken(string privateKey,uint? validPeriodMinutes = null, Dictionary<string, object>? claims = null)
+        private static string GenerateJwtToken(string privateKey, uint? validPeriodMinutes = null, Dictionary<string, object>? claims = null)
         {
             string token = "";
             using (var rsa = RSA.Create())
@@ -77,10 +77,10 @@ Token expiration period: forever
         private void ButtonFixedOneToken_Click(object sender, EventArgs e)
         {
             //generate one time RSA keys
-            (var privateKey,var publicKey) = GenerateRsaKeyPair();
+            (var privateKey, var publicKey) = GenerateRsaKeyPair();
             //generate token. no custom claim , no exp (forever)
             var token = GenerateJwtToken(privateKey);
-            textBoxPublicKeyForFixedToken.Text = publicKey.Replace("\n","\r\n");
+            textBoxPublicKeyForFixedToken.Text = publicKey.Replace("\n", "\r\n");
             textBoxTokenForFixedToken.Text = token.Replace("\n", "\r\n");
             groupBoxOneTokenResults.Enabled = true;
         }
@@ -92,7 +92,12 @@ Token expiration period: forever
         /// <param name="e"></param>
         private void ButtonClipboadPublicKeyForFixedToken_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(textBoxPublicKeyForFixedToken.Text);
+            try
+            {
+                string text = textBoxPublicKeyForFixedToken.Text;
+                Clipboard.SetText(text: text);
+            }
+            catch (Exception ex) { Debug.WriteLine(ex.ToString()); }
         }
 
         /// <summary>
@@ -100,9 +105,14 @@ Token expiration period: forever
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonClipboadTokenForFixedToken_Click_Click(object sender, EventArgs e)
+        private void ButtonClipboadTokenForFixedToken_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(textBoxTokenForFixedToken.Text);
+            try
+            {
+                string text = textBoxTokenForFixedToken.Text;
+                Clipboard.SetText(text: text);
+            }
+            catch (Exception ex) { Debug.WriteLine(ex.ToString()); }
         }
 
         /// <summary>
@@ -110,9 +120,21 @@ Token expiration period: forever
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonClipboadTokenWithUrlForFixedToken_Click_Click(object sender, EventArgs e)
+        private void ButtonClipboadTokenWithUrlForFixedToken_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(CLIPBOARD_BASE_URL + textBoxTokenForFixedToken.Text);
+            try
+            {
+                string text = CLIPBOARD_BASE_URL + textBoxTokenForFixedToken.Text;
+                Clipboard.SetText(text: text);
+            }
+            catch (Exception ex) { Debug.WriteLine(ex.ToString()); }
+        }
+
+        private void buttonGenerateAdvancedKeys_Click(object sender, EventArgs e)
+        {
+            //generate RSA keys
+            (var privateKey, var publicKey) = GenerateRsaKeyPair();
+
         }
     }
 }
