@@ -1,13 +1,25 @@
 using Microsoft.IdentityModel.Tokens;
 using System.Diagnostics;
+using System.IO;
+using System.Security.Claims;
 using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+using System.Xml.Linq;
 
 namespace VRC_JWT_utility
 {
     public partial class VrcJwtUtil : Form
     {
-        const string SPEC_TEXT = @"Algorithm: RSA (RS256) 2048bit
+        const string VRC_NAME_MODE_KEYS_DIRECTORY_PATH = "vrc_name_mode_keys";
+        const string VRC_NAME_MODE_PUBLIC_KEY_PATH = VRC_NAME_MODE_KEYS_DIRECTORY_PATH + "/public_key.pem";
+        const string VRC_NAME_MODE_PRIVATE_KEY_PATH = VRC_NAME_MODE_KEYS_DIRECTORY_PATH + "/private_key.pem";
+        const string SPEC_ONE_TOKEN_TEXT = @"Algorithm: RSA (RS256) 2048bit
 Claims: iat (unix time when generate)
+Token expiration period: forever
+"; 
+        const string SPEC_VRC_NAME_TOKEN_TEXT = @"Algorithm: RSA (RS256) 2048bit
+Claims: aud (VrcName hashed by SHA1),
+             iat (unix time when generate)
 Token expiration period: forever
 ";
         //In this web app, user can paste token to clipboard by one click. for utilize VR controller.
@@ -16,7 +28,24 @@ Token expiration period: forever
         public VrcJwtUtil()
         {
             InitializeComponent();
-            textBoxSpec.Text = SPEC_TEXT;
+            if (!Directory.Exists(VRC_NAME_MODE_KEYS_DIRECTORY_PATH))
+            {
+                Directory.CreateDirectory(VRC_NAME_MODE_KEYS_DIRECTORY_PATH);
+            }
+
+            //check generated.
+            if (File.Exists(VRC_NAME_MODE_PUBLIC_KEY_PATH) && File.Exists(VRC_NAME_MODE_PRIVATE_KEY_PATH))
+            {
+                var readPublicKey = File.ReadAllText(VRC_NAME_MODE_PUBLIC_KEY_PATH);
+                textBoxVrcNameModePublicKey.Text = readPublicKey.Replace("\n", "\r\n");
+                groupBoxVrcNameToken.Enabled = true;
+            }
+            else
+            {
+                groupBoxVrcNameToken.Enabled = false;
+            }
+            textBoxSpec.Text = SPEC_ONE_TOKEN_TEXT;
+            textBoxVrcNameModeSpec.Text = SPEC_VRC_NAME_TOKEN_TEXT;
         }
 
         /// <summary>
@@ -38,7 +67,7 @@ Token expiration period: forever
         /// <param name="validPeriodMinutes"></param>
         /// <param name="claims"></param>
         /// <returns></returns>
-        private static string GenerateJwtToken(string privateKey, uint? validPeriodMinutes = null, Dictionary<string, object>? claims = null)
+        private static string GenerateJwtToken(string privateKey, Dictionary<string, object>? claims = null, uint? validPeriodMinutes = null)
         {
             string token = "";
             using (var rsa = RSA.Create())
@@ -54,14 +83,20 @@ Token expiration period: forever
                     expires = DateTime.UtcNow.AddMinutes((double)validPeriodMinutes);
                 }
 
+                var signingCredentials = new SigningCredentials(new RsaSecurityKey(rsa), SecurityAlgorithms.RsaSha256)
+                {
+                    CryptoProviderFactory = new CryptoProviderFactory { CacheSignatureProviders = false }
+                };
+
                 rsa.ImportFromPem(privateKey);
                 var descriptor = new SecurityTokenDescriptor()
                 {
                     Claims = claims,
-                    SigningCredentials = new SigningCredentials(new RsaSecurityKey(rsa), "RS256"),
+                    SigningCredentials = signingCredentials,
                     IssuedAt = DateTime.UtcNow,
                     Expires = expires,
                 };
+
                 var handler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();
                 handler.SetDefaultTimesOnTokenCreation = false;
                 token = handler.WriteToken(handler.CreateJwtSecurityToken(descriptor));
@@ -130,11 +165,129 @@ Token expiration period: forever
             catch (Exception ex) { Debug.WriteLine(ex.ToString()); }
         }
 
-        private void buttonGenerateAdvancedKeys_Click(object sender, EventArgs e)
+        /// <summary>
+        /// generate public key and private key.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonGenerateAdvancedKeys_Click(object sender, EventArgs e)
         {
             //generate RSA keys
-            (var privateKey, var publicKey) = GenerateRsaKeyPair();
+            //check generated keys are exists.
+            if (File.Exists(VRC_NAME_MODE_PUBLIC_KEY_PATH) && File.Exists(VRC_NAME_MODE_PRIVATE_KEY_PATH))
+            {
+                DialogResult result = MessageBox.Show("A key has already been generated.\n If you continue with the generation, the existing key will be overwritten and the tokens generated so far will be invalid.\n Do you want to continue generating?",
+                    "confirmation",
+                    MessageBoxButtons.YesNoCancel,
+                    MessageBoxIcon.Exclamation,
+                    MessageBoxDefaultButton.Button2);
 
+                if (result == DialogResult.No || result == DialogResult.Cancel) return; // no or cancel or close message box.
+                //yes is proceed process.
+            }
+
+            (var privateKey, var publicKey) = GenerateRsaKeyPair();
+            Debug.WriteLine(privateKey);
+            File.WriteAllText(VRC_NAME_MODE_PUBLIC_KEY_PATH, publicKey);
+            File.WriteAllText(VRC_NAME_MODE_PRIVATE_KEY_PATH, privateKey);
+            var readPublicKey = File.ReadAllText(VRC_NAME_MODE_PUBLIC_KEY_PATH);
+            textBoxVrcNameModePublicKey.Text = readPublicKey.Replace("\n", "\r\n");
+            groupBoxVrcNameToken.Enabled = true;
+        }
+
+        /// <summary>
+        /// paste public key to clipboad
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonClipboardAdvancedPublicKey_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string text = textBoxVrcNameModePublicKey.Text;
+                Clipboard.SetText(text: text);
+            }
+            catch (Exception ex) { Debug.WriteLine(ex.ToString()); }
+        }
+
+        /// <summary>
+        /// generate token with vrchat name. using from generated private key.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonGenerateVrcNameToken_Click(object sender, EventArgs e)
+        {
+            //check VrcName
+            var input = textBoxVrcName.Text;
+            var vrcName = input.Trim();
+            if (vrcName.Length < 4)
+            {
+                MessageBox.Show("VRChat name is too short.(available 4 to 15 characters)",
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                return;
+            }
+            else if (vrcName.Length > 15)
+            {
+                MessageBox.Show("VRChat name is too long.(available 4 to 15 characters)",
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                return;
+            }
+            //get hash
+            var hashedVrcName = GetSHA1Hash(vrcName);
+            //generate token. aud claim , no exp (forever)
+            var privateKey = File.ReadAllText(VRC_NAME_MODE_PRIVATE_KEY_PATH);
+            var claims = new Dictionary<string, object>() { { "aud", hashedVrcName } };
+            var token = GenerateJwtToken(privateKey, claims);
+            textBoxVrcNameModeToken.Text = token.Replace("\n", "\r\n");
+        }
+
+        /// <summary>
+        /// get SHA1 hex strings from string
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        private static string GetSHA1Hash(string input)
+        {
+            byte[] data = System.Text.Encoding.UTF8.GetBytes(input);
+            var sha1 = SHA1.Create();
+            var bs = sha1.ComputeHash(data);
+            sha1.Clear();
+            string result = BitConverter.ToString(bs).ToLower().Replace("-", "");
+            return result;
+        }
+
+        /// <summary>
+        /// paste token to clipboad
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonClipboadAdvancedToken_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string text = textBoxVrcNameModeToken.Text;
+                Clipboard.SetText(text: text);
+            }
+            catch (Exception ex) { Debug.WriteLine(ex.ToString()); }
+        }
+
+        /// <summary>
+        /// paste token with URL to clipboad (for one click clipboad for VR user)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonClipboadWithUrlAdvancedToken_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string text = CLIPBOARD_BASE_URL + textBoxVrcNameModeToken.Text;
+                Clipboard.SetText(text: text);
+            }
+            catch (Exception ex) { Debug.WriteLine(ex.ToString()); }
         }
     }
 }

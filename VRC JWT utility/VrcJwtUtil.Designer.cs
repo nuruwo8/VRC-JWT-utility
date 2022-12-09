@@ -32,7 +32,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.buttonFixedOneToken = new System.Windows.Forms.Button();
             this.groupBoxOneTokenResults = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,30 +43,31 @@
             this.textBoxPublicKeyForFixedToken = new System.Windows.Forms.TextBox();
             this.textBoxSpec = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.buttonGenerateAdvancedToken = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBoxVrcNameToken = new System.Windows.Forms.GroupBox();
+            this.buttonGenerateVrcNameToken = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxVrcName = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.buttonClipboadWithUrlAdvancedToken = new System.Windows.Forms.Button();
             this.buttonClipboadAdvancedToken = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textBoxVrcNameModeToken = new System.Windows.Forms.TextBox();
+            this.groupBoxVrcNameKeys = new System.Windows.Forms.GroupBox();
             this.buttonclipboardAdvancedPublicKey = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxVrcNameModePublicKey = new System.Windows.Forms.TextBox();
             this.buttonGenerateAdvancedKeys = new System.Windows.Forms.Button();
+            this.textBoxVrcNameModeSpec = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxOneTokenResults.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBoxVrcNameToken.SuspendLayout();
+            this.groupBoxVrcNameKeys.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -75,26 +75,23 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Meiryo UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tabControl1.Location = new System.Drawing.Point(15, 15);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(20, 5);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(794, 939);
+            this.tabControl1.Size = new System.Drawing.Size(635, 816);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.pictureBox1);
-            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.buttonFixedOneToken);
             this.tabPage1.Controls.Add(this.groupBoxOneTokenResults);
             this.tabPage1.Controls.Add(this.textBoxSpec);
-            this.tabPage1.Location = new System.Drawing.Point(4, 38);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 35);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage1.Size = new System.Drawing.Size(786, 897);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(627, 777);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Fixed one token Mode";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -104,31 +101,20 @@
             this.pictureBox1.BackgroundImage = global::VRC_JWT_utility.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 15);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 108);
+            this.pictureBox1.Size = new System.Drawing.Size(60, 86);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(399, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 30);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Specs";
             // 
             // buttonFixedOneToken
             // 
             this.buttonFixedOneToken.Font = new System.Drawing.Font("メイリオ", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonFixedOneToken.Location = new System.Drawing.Point(122, 60);
+            this.buttonFixedOneToken.Location = new System.Drawing.Point(98, 43);
             this.buttonFixedOneToken.Margin = new System.Windows.Forms.Padding(2);
             this.buttonFixedOneToken.Name = "buttonFixedOneToken";
-            this.buttonFixedOneToken.Size = new System.Drawing.Size(245, 48);
+            this.buttonFixedOneToken.Size = new System.Drawing.Size(196, 38);
             this.buttonFixedOneToken.TabIndex = 7;
             this.buttonFixedOneToken.Text = "Generate new token";
             this.buttonFixedOneToken.UseVisualStyleBackColor = true;
@@ -144,12 +130,12 @@
             this.groupBoxOneTokenResults.Controls.Add(this.textBoxTokenForFixedToken);
             this.groupBoxOneTokenResults.Controls.Add(this.textBoxPublicKeyForFixedToken);
             this.groupBoxOneTokenResults.Enabled = false;
-            this.groupBoxOneTokenResults.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBoxOneTokenResults.Location = new System.Drawing.Point(18, 146);
+            this.groupBoxOneTokenResults.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxOneTokenResults.Location = new System.Drawing.Point(14, 119);
             this.groupBoxOneTokenResults.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxOneTokenResults.Name = "groupBoxOneTokenResults";
             this.groupBoxOneTokenResults.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxOneTokenResults.Size = new System.Drawing.Size(745, 732);
+            this.groupBoxOneTokenResults.Size = new System.Drawing.Size(596, 644);
             this.groupBoxOneTokenResults.TabIndex = 9;
             this.groupBoxOneTokenResults.TabStop = false;
             this.groupBoxOneTokenResults.Text = "Results";
@@ -159,46 +145,46 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Crimson;
-            this.label3.Location = new System.Drawing.Point(18, 410);
+            this.label3.Location = new System.Drawing.Point(14, 363);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(436, 36);
+            this.label3.Size = new System.Drawing.Size(366, 30);
             this.label3.TabIndex = 4;
             this.label3.Text = "Jwt Token (Tell only your members)";
             // 
             // buttonClipboadTokenWithUrlForFixedToken_Click
             // 
             this.buttonClipboadTokenWithUrlForFixedToken_Click.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonClipboadTokenWithUrlForFixedToken_Click.Location = new System.Drawing.Point(268, 675);
+            this.buttonClipboadTokenWithUrlForFixedToken_Click.Location = new System.Drawing.Point(215, 587);
             this.buttonClipboadTokenWithUrlForFixedToken_Click.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClipboadTokenWithUrlForFixedToken_Click.Name = "buttonClipboadTokenWithUrlForFixedToken_Click";
-            this.buttonClipboadTokenWithUrlForFixedToken_Click.Size = new System.Drawing.Size(228, 40);
+            this.buttonClipboadTokenWithUrlForFixedToken_Click.Size = new System.Drawing.Size(182, 32);
             this.buttonClipboadTokenWithUrlForFixedToken_Click.TabIndex = 3;
-            this.buttonClipboadTokenWithUrlForFixedToken_Click.Text = "clipboard with URL";
+            this.buttonClipboadTokenWithUrlForFixedToken_Click.Text = "Clipboard with URL";
             this.buttonClipboadTokenWithUrlForFixedToken_Click.UseVisualStyleBackColor = true;
             this.buttonClipboadTokenWithUrlForFixedToken_Click.Click += new System.EventHandler(this.ButtonClipboadTokenWithUrlForFixedToken_Click);
             // 
             // buttonClipboadTokenForFixedToken_Click
             // 
             this.buttonClipboadTokenForFixedToken_Click.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonClipboadTokenForFixedToken_Click.Location = new System.Drawing.Point(32, 675);
+            this.buttonClipboadTokenForFixedToken_Click.Location = new System.Drawing.Point(26, 587);
             this.buttonClipboadTokenForFixedToken_Click.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClipboadTokenForFixedToken_Click.Name = "buttonClipboadTokenForFixedToken_Click";
-            this.buttonClipboadTokenForFixedToken_Click.Size = new System.Drawing.Size(132, 40);
+            this.buttonClipboadTokenForFixedToken_Click.Size = new System.Drawing.Size(106, 32);
             this.buttonClipboadTokenForFixedToken_Click.TabIndex = 3;
-            this.buttonClipboadTokenForFixedToken_Click.Text = "clipboard";
+            this.buttonClipboadTokenForFixedToken_Click.Text = "Clipboard";
             this.buttonClipboadTokenForFixedToken_Click.UseVisualStyleBackColor = true;
             this.buttonClipboadTokenForFixedToken_Click.Click += new System.EventHandler(this.ButtonClipboadTokenForFixedToken_Click);
             // 
             // buttonClipboadPublicKeyForFixedToken
             // 
             this.buttonClipboadPublicKeyForFixedToken.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonClipboadPublicKeyForFixedToken.Location = new System.Drawing.Point(32, 338);
+            this.buttonClipboadPublicKeyForFixedToken.Location = new System.Drawing.Point(26, 294);
             this.buttonClipboadPublicKeyForFixedToken.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClipboadPublicKeyForFixedToken.Name = "buttonClipboadPublicKeyForFixedToken";
-            this.buttonClipboadPublicKeyForFixedToken.Size = new System.Drawing.Size(132, 40);
+            this.buttonClipboadPublicKeyForFixedToken.Size = new System.Drawing.Size(106, 32);
             this.buttonClipboadPublicKeyForFixedToken.TabIndex = 3;
-            this.buttonClipboadPublicKeyForFixedToken.Text = "clipboard";
+            this.buttonClipboadPublicKeyForFixedToken.Text = "Clipboard";
             this.buttonClipboadPublicKeyForFixedToken.UseVisualStyleBackColor = true;
             this.buttonClipboadPublicKeyForFixedToken.Click += new System.EventHandler(this.ButtonClipboadPublicKeyForFixedToken_Click);
             // 
@@ -207,111 +193,136 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label2.Location = new System.Drawing.Point(18, 42);
+            this.label2.Location = new System.Drawing.Point(14, 47);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(406, 36);
+            this.label2.Size = new System.Drawing.Size(340, 30);
             this.label2.TabIndex = 1;
             this.label2.Text = "Public key (Set your world Gimic)";
             // 
             // textBoxTokenForFixedToken
             // 
             this.textBoxTokenForFixedToken.Font = new System.Drawing.Font("メイリオ", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxTokenForFixedToken.Location = new System.Drawing.Point(32, 451);
+            this.textBoxTokenForFixedToken.Location = new System.Drawing.Point(26, 396);
             this.textBoxTokenForFixedToken.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxTokenForFixedToken.Multiline = true;
             this.textBoxTokenForFixedToken.Name = "textBoxTokenForFixedToken";
             this.textBoxTokenForFixedToken.ReadOnly = true;
-            this.textBoxTokenForFixedToken.Size = new System.Drawing.Size(695, 218);
+            this.textBoxTokenForFixedToken.Size = new System.Drawing.Size(557, 175);
             this.textBoxTokenForFixedToken.TabIndex = 2;
             // 
             // textBoxPublicKeyForFixedToken
             // 
             this.textBoxPublicKeyForFixedToken.Font = new System.Drawing.Font("メイリオ", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxPublicKeyForFixedToken.Location = new System.Drawing.Point(32, 84);
+            this.textBoxPublicKeyForFixedToken.Location = new System.Drawing.Point(26, 80);
             this.textBoxPublicKeyForFixedToken.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPublicKeyForFixedToken.Multiline = true;
             this.textBoxPublicKeyForFixedToken.Name = "textBoxPublicKeyForFixedToken";
             this.textBoxPublicKeyForFixedToken.ReadOnly = true;
-            this.textBoxPublicKeyForFixedToken.Size = new System.Drawing.Size(695, 248);
+            this.textBoxPublicKeyForFixedToken.Size = new System.Drawing.Size(557, 199);
             this.textBoxPublicKeyForFixedToken.TabIndex = 2;
             // 
             // textBoxSpec
             // 
             this.textBoxSpec.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxSpec.Location = new System.Drawing.Point(395, 50);
+            this.textBoxSpec.Location = new System.Drawing.Point(315, 25);
             this.textBoxSpec.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSpec.Multiline = true;
             this.textBoxSpec.Name = "textBoxSpec";
             this.textBoxSpec.ReadOnly = true;
-            this.textBoxSpec.Size = new System.Drawing.Size(368, 92);
+            this.textBoxSpec.Size = new System.Drawing.Size(295, 76);
             this.textBoxSpec.TabIndex = 10;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 38);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.BackColor = System.Drawing.Color.GhostWhite;
+            this.tabPage2.Controls.Add(this.pictureBox2);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.groupBoxVrcNameToken);
+            this.tabPage2.Controls.Add(this.groupBoxVrcNameKeys);
+            this.tabPage2.Controls.Add(this.textBoxVrcNameModeSpec);
+            this.tabPage2.Location = new System.Drawing.Point(4, 35);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage2.Size = new System.Drawing.Size(786, 897);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(627, 777);
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "VRC name token mode";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // pictureBox2
             // 
-            this.groupBox2.Controls.Add(this.buttonGenerateAdvancedToken);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBoxVrcName);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.buttonClipboadWithUrlAdvancedToken);
-            this.groupBox2.Controls.Add(this.buttonClipboadAdvancedToken);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(21, 429);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(744, 442);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Generate Token";
+            this.pictureBox2.BackgroundImage = global::VRC_JWT_utility.Properties.Resources.logo;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.InitialImage = null;
+            this.pictureBox2.Location = new System.Drawing.Point(23, 15);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(60, 86);
+            this.pictureBox2.TabIndex = 21;
+            this.pictureBox2.TabStop = false;
             // 
-            // buttonGenerateAdvancedToken
+            // label9
             // 
-            this.buttonGenerateAdvancedToken.Font = new System.Drawing.Font("メイリオ", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonGenerateAdvancedToken.Location = new System.Drawing.Point(14, 154);
-            this.buttonGenerateAdvancedToken.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonGenerateAdvancedToken.Name = "buttonGenerateAdvancedToken";
-            this.buttonGenerateAdvancedToken.Size = new System.Drawing.Size(292, 48);
-            this.buttonGenerateAdvancedToken.TabIndex = 13;
-            this.buttonGenerateAdvancedToken.Text = "Generate new token";
-            this.buttonGenerateAdvancedToken.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label9.Location = new System.Drawing.Point(90, 62);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(158, 30);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "VRChat Name.";
             // 
-            // label4
+            // label8
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(381, 41);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 30);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Specs";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label8.Location = new System.Drawing.Point(85, 32);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(222, 30);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Generate token with ";
+            // 
+            // groupBoxVrcNameToken
+            // 
+            this.groupBoxVrcNameToken.Controls.Add(this.buttonGenerateVrcNameToken);
+            this.groupBoxVrcNameToken.Controls.Add(this.label7);
+            this.groupBoxVrcNameToken.Controls.Add(this.label5);
+            this.groupBoxVrcNameToken.Controls.Add(this.textBoxVrcName);
+            this.groupBoxVrcNameToken.Controls.Add(this.buttonClipboadWithUrlAdvancedToken);
+            this.groupBoxVrcNameToken.Controls.Add(this.buttonClipboadAdvancedToken);
+            this.groupBoxVrcNameToken.Controls.Add(this.textBoxVrcNameModeToken);
+            this.groupBoxVrcNameToken.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxVrcNameToken.Location = new System.Drawing.Point(17, 419);
+            this.groupBoxVrcNameToken.Name = "groupBoxVrcNameToken";
+            this.groupBoxVrcNameToken.Size = new System.Drawing.Size(595, 349);
+            this.groupBoxVrcNameToken.TabIndex = 18;
+            this.groupBoxVrcNameToken.TabStop = false;
+            this.groupBoxVrcNameToken.Text = "Generate Token";
+            // 
+            // buttonGenerateVrcNameToken
+            // 
+            this.buttonGenerateVrcNameToken.Font = new System.Drawing.Font("メイリオ", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonGenerateVrcNameToken.Location = new System.Drawing.Point(11, 122);
+            this.buttonGenerateVrcNameToken.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonGenerateVrcNameToken.Name = "buttonGenerateVrcNameToken";
+            this.buttonGenerateVrcNameToken.Size = new System.Drawing.Size(234, 38);
+            this.buttonGenerateVrcNameToken.TabIndex = 13;
+            this.buttonGenerateVrcNameToken.Text = "Generate new token";
+            this.buttonGenerateVrcNameToken.UseVisualStyleBackColor = true;
+            this.buttonGenerateVrcNameToken.Click += new System.EventHandler(this.ButtonGenerateVrcNameToken_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(14, 49);
+            this.label7.Location = new System.Drawing.Point(11, 28);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(175, 36);
+            this.label7.Size = new System.Drawing.Size(148, 30);
             this.label7.TabIndex = 8;
             this.label7.Text = "VRChat name";
             // 
@@ -320,146 +331,137 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Crimson;
-            this.label5.Location = new System.Drawing.Point(14, 218);
+            this.label5.Location = new System.Drawing.Point(11, 177);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(367, 36);
+            this.label5.Size = new System.Drawing.Size(309, 30);
             this.label5.TabIndex = 8;
             this.label5.Text = "Jwt Token (Tell your member)";
             // 
             // textBoxVrcName
             // 
-            this.textBoxVrcName.BackColor = System.Drawing.Color.White;
-            this.textBoxVrcName.Location = new System.Drawing.Point(14, 90);
-            this.textBoxVrcName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxVrcName.BackColor = System.Drawing.Color.LightCyan;
+            this.textBoxVrcName.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxVrcName.Location = new System.Drawing.Point(11, 65);
             this.textBoxVrcName.Name = "textBoxVrcName";
-            this.textBoxVrcName.Size = new System.Drawing.Size(350, 43);
+            this.textBoxVrcName.Size = new System.Drawing.Size(416, 37);
             this.textBoxVrcName.TabIndex = 17;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(381, 89);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(355, 112);
-            this.textBox3.TabIndex = 15;
             // 
             // buttonClipboadWithUrlAdvancedToken
             // 
             this.buttonClipboadWithUrlAdvancedToken.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonClipboadWithUrlAdvancedToken.Location = new System.Drawing.Point(254, 388);
+            this.buttonClipboadWithUrlAdvancedToken.Location = new System.Drawing.Point(203, 309);
             this.buttonClipboadWithUrlAdvancedToken.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClipboadWithUrlAdvancedToken.Name = "buttonClipboadWithUrlAdvancedToken";
-            this.buttonClipboadWithUrlAdvancedToken.Size = new System.Drawing.Size(228, 40);
+            this.buttonClipboadWithUrlAdvancedToken.Size = new System.Drawing.Size(182, 32);
             this.buttonClipboadWithUrlAdvancedToken.TabIndex = 6;
-            this.buttonClipboadWithUrlAdvancedToken.Text = "clipboard with URL";
+            this.buttonClipboadWithUrlAdvancedToken.Text = "Clipboard with URL";
             this.buttonClipboadWithUrlAdvancedToken.UseVisualStyleBackColor = true;
+            this.buttonClipboadWithUrlAdvancedToken.Click += new System.EventHandler(this.ButtonClipboadWithUrlAdvancedToken_Click);
             // 
             // buttonClipboadAdvancedToken
             // 
             this.buttonClipboadAdvancedToken.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonClipboadAdvancedToken.Location = new System.Drawing.Point(31, 388);
+            this.buttonClipboadAdvancedToken.Location = new System.Drawing.Point(25, 309);
             this.buttonClipboadAdvancedToken.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClipboadAdvancedToken.Name = "buttonClipboadAdvancedToken";
-            this.buttonClipboadAdvancedToken.Size = new System.Drawing.Size(132, 40);
+            this.buttonClipboadAdvancedToken.Size = new System.Drawing.Size(106, 32);
             this.buttonClipboadAdvancedToken.TabIndex = 7;
-            this.buttonClipboadAdvancedToken.Text = "clipboard";
+            this.buttonClipboadAdvancedToken.Text = "Clipboard";
             this.buttonClipboadAdvancedToken.UseVisualStyleBackColor = true;
+            this.buttonClipboadAdvancedToken.Click += new System.EventHandler(this.ButtonClipboadAdvancedToken_Click);
             // 
-            // textBox1
+            // textBoxVrcNameModeToken
             // 
-            this.textBox1.Font = new System.Drawing.Font("メイリオ", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(14, 258);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(713, 113);
-            this.textBox1.TabIndex = 5;
+            this.textBoxVrcNameModeToken.Font = new System.Drawing.Font("メイリオ", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxVrcNameModeToken.Location = new System.Drawing.Point(11, 209);
+            this.textBoxVrcNameModeToken.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxVrcNameModeToken.Multiline = true;
+            this.textBoxVrcNameModeToken.Name = "textBoxVrcNameModeToken";
+            this.textBoxVrcNameModeToken.ReadOnly = true;
+            this.textBoxVrcNameModeToken.Size = new System.Drawing.Size(571, 91);
+            this.textBoxVrcNameModeToken.TabIndex = 5;
             // 
-            // groupBox1
+            // groupBoxVrcNameKeys
             // 
-            this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.buttonclipboardAdvancedPublicKey);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.buttonGenerateAdvancedKeys);
-            this.groupBox1.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(20, 20);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(745, 402);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Genelate Keys";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::VRC_JWT_utility.Properties.Resources.logo;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(15, 42);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(75, 108);
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
+            this.groupBoxVrcNameKeys.Controls.Add(this.buttonclipboardAdvancedPublicKey);
+            this.groupBoxVrcNameKeys.Controls.Add(this.label6);
+            this.groupBoxVrcNameKeys.Controls.Add(this.textBoxVrcNameModePublicKey);
+            this.groupBoxVrcNameKeys.Controls.Add(this.buttonGenerateAdvancedKeys);
+            this.groupBoxVrcNameKeys.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBoxVrcNameKeys.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxVrcNameKeys.Location = new System.Drawing.Point(16, 109);
+            this.groupBoxVrcNameKeys.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxVrcNameKeys.Name = "groupBoxVrcNameKeys";
+            this.groupBoxVrcNameKeys.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBoxVrcNameKeys.Size = new System.Drawing.Size(596, 302);
+            this.groupBoxVrcNameKeys.TabIndex = 14;
+            this.groupBoxVrcNameKeys.TabStop = false;
+            this.groupBoxVrcNameKeys.Text = "Genelate Keys";
             // 
             // buttonclipboardAdvancedPublicKey
             // 
             this.buttonclipboardAdvancedPublicKey.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonclipboardAdvancedPublicKey.Location = new System.Drawing.Point(32, 345);
+            this.buttonclipboardAdvancedPublicKey.Location = new System.Drawing.Point(26, 258);
             this.buttonclipboardAdvancedPublicKey.Margin = new System.Windows.Forms.Padding(2);
             this.buttonclipboardAdvancedPublicKey.Name = "buttonclipboardAdvancedPublicKey";
-            this.buttonclipboardAdvancedPublicKey.Size = new System.Drawing.Size(132, 40);
+            this.buttonclipboardAdvancedPublicKey.Size = new System.Drawing.Size(106, 32);
             this.buttonclipboardAdvancedPublicKey.TabIndex = 3;
-            this.buttonclipboardAdvancedPublicKey.Text = "clipboard";
+            this.buttonclipboardAdvancedPublicKey.Text = "Clipboard";
             this.buttonclipboardAdvancedPublicKey.UseVisualStyleBackColor = true;
+            this.buttonclipboardAdvancedPublicKey.Click += new System.EventHandler(this.ButtonClipboardAdvancedPublicKey_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label6.Location = new System.Drawing.Point(32, 170);
+            this.label6.Location = new System.Drawing.Point(12, 88);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(406, 36);
+            this.label6.Size = new System.Drawing.Size(340, 30);
             this.label6.TabIndex = 1;
             this.label6.Text = "Public key (Set your world Gimic)";
             // 
-            // textBox2
+            // textBoxVrcNameModePublicKey
             // 
-            this.textBox2.Font = new System.Drawing.Font("メイリオ", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(15, 210);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(713, 119);
-            this.textBox2.TabIndex = 2;
+            this.textBoxVrcNameModePublicKey.Font = new System.Drawing.Font("メイリオ", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxVrcNameModePublicKey.Location = new System.Drawing.Point(12, 120);
+            this.textBoxVrcNameModePublicKey.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxVrcNameModePublicKey.Multiline = true;
+            this.textBoxVrcNameModePublicKey.Name = "textBoxVrcNameModePublicKey";
+            this.textBoxVrcNameModePublicKey.ReadOnly = true;
+            this.textBoxVrcNameModePublicKey.Size = new System.Drawing.Size(571, 126);
+            this.textBoxVrcNameModePublicKey.TabIndex = 2;
             // 
             // buttonGenerateAdvancedKeys
             // 
             this.buttonGenerateAdvancedKeys.Font = new System.Drawing.Font("メイリオ", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonGenerateAdvancedKeys.Location = new System.Drawing.Point(109, 70);
+            this.buttonGenerateAdvancedKeys.Location = new System.Drawing.Point(12, 36);
             this.buttonGenerateAdvancedKeys.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGenerateAdvancedKeys.Name = "buttonGenerateAdvancedKeys";
-            this.buttonGenerateAdvancedKeys.Size = new System.Drawing.Size(275, 48);
+            this.buttonGenerateAdvancedKeys.Size = new System.Drawing.Size(220, 38);
             this.buttonGenerateAdvancedKeys.TabIndex = 12;
             this.buttonGenerateAdvancedKeys.Text = "Generate new keys";
             this.buttonGenerateAdvancedKeys.UseVisualStyleBackColor = true;
-            this.buttonGenerateAdvancedKeys.Click += new System.EventHandler(this.buttonGenerateAdvancedKeys_Click);
+            this.buttonGenerateAdvancedKeys.Click += new System.EventHandler(this.ButtonGenerateAdvancedKeys_Click);
+            // 
+            // textBoxVrcNameModeSpec
+            // 
+            this.textBoxVrcNameModeSpec.Font = new System.Drawing.Font("メイリオ", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxVrcNameModeSpec.Location = new System.Drawing.Point(311, 18);
+            this.textBoxVrcNameModeSpec.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxVrcNameModeSpec.Multiline = true;
+            this.textBoxVrcNameModeSpec.Name = "textBoxVrcNameModeSpec";
+            this.textBoxVrcNameModeSpec.ReadOnly = true;
+            this.textBoxVrcNameModeSpec.Size = new System.Drawing.Size(297, 87);
+            this.textBoxVrcNameModeSpec.TabIndex = 15;
             // 
             // VrcJwtUtil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 965);
+            this.ClientSize = new System.Drawing.Size(654, 840);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -472,11 +474,12 @@
             this.groupBoxOneTokenResults.ResumeLayout(false);
             this.groupBoxOneTokenResults.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBoxVrcNameToken.ResumeLayout(false);
+            this.groupBoxVrcNameToken.PerformLayout();
+            this.groupBoxVrcNameKeys.ResumeLayout(false);
+            this.groupBoxVrcNameKeys.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -486,7 +489,6 @@
         private TabControl tabControl1;
         private TabPage tabPage1;
         private PictureBox pictureBox1;
-        private Label label1;
         private Button buttonFixedOneToken;
         private GroupBox groupBoxOneTokenResults;
         private Label label3;
@@ -498,21 +500,22 @@
         private TextBox textBoxPublicKeyForFixedToken;
         private TextBox textBoxSpec;
         private TabPage tabPage2;
-        private GroupBox groupBox2;
-        private Button buttonGenerateAdvancedToken;
+        private GroupBox groupBoxVrcNameToken;
+        private Button buttonGenerateVrcNameToken;
         private Label label7;
         private Label label5;
         private TextBox textBoxVrcName;
         private Button buttonClipboadWithUrlAdvancedToken;
         private Button buttonClipboadAdvancedToken;
-        private TextBox textBox1;
-        private Label label4;
-        private GroupBox groupBox1;
+        private TextBox textBoxVrcNameModeToken;
+        private GroupBox groupBoxVrcNameKeys;
         private Button buttonclipboardAdvancedPublicKey;
         private Label label6;
-        private TextBox textBox2;
+        private TextBox textBoxVrcNameModePublicKey;
         private Button buttonGenerateAdvancedKeys;
-        private TextBox textBox3;
+        private TextBox textBoxVrcNameModeSpec;
+        private Label label9;
+        private Label label8;
         private PictureBox pictureBox2;
     }
 }
