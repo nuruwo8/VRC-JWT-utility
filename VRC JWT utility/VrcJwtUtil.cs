@@ -16,9 +16,9 @@ namespace VRC_JWT_utility
         const string SPEC_ONE_TOKEN_TEXT = @"Algorithm: RSA (RS256) 2048bit
 Claims: iat (unix time when generate)
 Token expiration period: forever
-"; 
+";
         const string SPEC_VRC_NAME_TOKEN_TEXT = @"Algorithm: RSA (RS256) 2048bit
-Claims: aud (VrcName hashed by SHA1),
+Claims: aud (VrcName hashed by SHA256),
              iat (unix time when generate)
 Token expiration period: forever
 ";
@@ -67,7 +67,7 @@ Token expiration period: forever
         /// <param name="validPeriodMinutes"></param>
         /// <param name="claims"></param>
         /// <returns></returns>
-        private static string GenerateJwtToken(string privateKey, Dictionary<string, object>? claims = null, uint? validPeriodMinutes = null)
+        private static string GenerateJwtToken(string privateKey, Dictionary<string, object>? claims = null, uint? validPeriodMinutes = null, DateTime? iat = null)
         {
             string token = "";
             using (var rsa = RSA.Create())
@@ -83,6 +83,11 @@ Token expiration period: forever
                     expires = DateTime.UtcNow.AddMinutes((double)validPeriodMinutes);
                 }
 
+                if (iat == null)
+                {
+                    iat = DateTime.UtcNow;
+                }
+
                 var signingCredentials = new SigningCredentials(new RsaSecurityKey(rsa), SecurityAlgorithms.RsaSha256)
                 {
                     CryptoProviderFactory = new CryptoProviderFactory { CacheSignatureProviders = false }
@@ -93,7 +98,7 @@ Token expiration period: forever
                 {
                     Claims = claims,
                     SigningCredentials = signingCredentials,
-                    IssuedAt = DateTime.UtcNow,
+                    IssuedAt = iat,
                     Expires = expires,
                 };
 
@@ -237,25 +242,36 @@ Token expiration period: forever
                 return;
             }
             //get hash
-            var hashedVrcName = GetSHA1Hash(vrcName);
+            var nowDateTime = DateTime.UtcNow;
+            var hashedVrcName = GetSHA256Hash(ToUnixTime(nowDateTime).ToString() + vrcName);
             //generate token. aud claim , no exp (forever)
             var privateKey = File.ReadAllText(VRC_NAME_MODE_PRIVATE_KEY_PATH);
             var claims = new Dictionary<string, object>() { { "aud", hashedVrcName } };
-            var token = GenerateJwtToken(privateKey, claims);
+            var token = GenerateJwtToken(privateKey, claims, null, nowDateTime);
             textBoxVrcNameModeToken.Text = token.Replace("\n", "\r\n");
         }
 
         /// <summary>
-        /// get SHA1 hex strings from string
+        /// get UnixTime from Datatime
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
+        public static uint ToUnixTime(DateTime dt)
+        {
+            return (uint)(dt.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+        }
+
+        /// <summary>
+        /// get SHA256 hex strings from string
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        private static string GetSHA1Hash(string input)
+        private static string GetSHA256Hash(string input)
         {
             byte[] data = System.Text.Encoding.UTF8.GetBytes(input);
-            var sha1 = SHA1.Create();
-            var bs = sha1.ComputeHash(data);
-            sha1.Clear();
+            var sha256 = SHA256.Create();
+            var bs = sha256.ComputeHash(data);
+            sha256.Clear();
             string result = BitConverter.ToString(bs).ToLower().Replace("-", "");
             return result;
         }
