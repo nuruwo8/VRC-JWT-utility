@@ -256,9 +256,9 @@ Token expiration period: forever
         /// </summary>
         /// <param name="dt"></param>
         /// <returns></returns>
-        public static uint ToUnixTime(DateTime dt)
+        public static ulong ToUnixTime(DateTime dt)
         {
-            return (uint)(dt.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            return (ulong)((dt.Subtract(new DateTime(1970, 1, 1))).TotalSeconds);
         }
 
         /// <summary>
