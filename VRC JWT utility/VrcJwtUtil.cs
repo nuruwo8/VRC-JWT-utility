@@ -192,7 +192,6 @@ Token expiration period: forever
             }
 
             (var privateKey, var publicKey) = GenerateRsaKeyPair();
-            Debug.WriteLine(privateKey);
             File.WriteAllText(VRC_NAME_MODE_PUBLIC_KEY_PATH, publicKey);
             File.WriteAllText(VRC_NAME_MODE_PRIVATE_KEY_PATH, privateKey);
             var readPublicKey = File.ReadAllText(VRC_NAME_MODE_PUBLIC_KEY_PATH);
@@ -244,6 +243,7 @@ Token expiration period: forever
             //get hash
             var nowDateTime = DateTime.UtcNow;
             var hashedVrcName = GetSHA256Hash(ToUnixTime(nowDateTime).ToString() + vrcName);
+            Debug.WriteLine(ToUnixTime(nowDateTime).ToString() + vrcName);
             //generate token. aud claim , no exp (forever)
             var privateKey = File.ReadAllText(VRC_NAME_MODE_PRIVATE_KEY_PATH);
             var claims = new Dictionary<string, object>() { { "aud", hashedVrcName } };
