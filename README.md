@@ -1,2 +1,2 @@
-# VRC-JWT-utility
+# VrcJwtUtility
 Genarate Key and token for Jwt Locker
