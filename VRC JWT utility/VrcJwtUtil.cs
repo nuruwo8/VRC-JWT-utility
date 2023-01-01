@@ -126,11 +126,11 @@ Token expiration period: forever
         }
 
         /// <summary>
-        /// paste public key to clipboad 
+        /// paste public key to clipboard
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonClipboadPublicKeyForFixedToken_Click(object sender, EventArgs e)
+        private void ButtonClipboardPublicKeyForFixedToken_Click(object sender, EventArgs e)
         {
             try
             {
@@ -141,11 +141,11 @@ Token expiration period: forever
         }
 
         /// <summary>
-        /// paste token to clipboad
+        /// paste token to clipboard
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonClipboadTokenForFixedToken_Click(object sender, EventArgs e)
+        private void ButtonClipboardTokenForFixedToken_Click(object sender, EventArgs e)
         {
             try
             {
@@ -156,11 +156,11 @@ Token expiration period: forever
         }
 
         /// <summary>
-        /// paste token with URL to clipboad (for one click clipboad for VR user)
+        /// paste token with URL to clipboard(for one click clipboardfor VR user)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonClipboadTokenWithUrlForFixedToken_Click(object sender, EventArgs e)
+        private void ButtonClipboardTokenWithUrlForFixedToken_Click(object sender, EventArgs e)
         {
             try
             {
@@ -200,7 +200,7 @@ Token expiration period: forever
         }
 
         /// <summary>
-        /// paste public key to clipboad
+        /// paste public key to clipboard
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -277,11 +277,11 @@ Token expiration period: forever
         }
 
         /// <summary>
-        /// paste token to clipboad
+        /// paste token to clipboard
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonClipboadAdvancedToken_Click(object sender, EventArgs e)
+        private void ButtonClipboardAdvancedToken_Click(object sender, EventArgs e)
         {
             try
             {
@@ -292,11 +292,11 @@ Token expiration period: forever
         }
 
         /// <summary>
-        /// paste token with URL to clipboad (for one click clipboad for VR user)
+        /// paste token with URL to clipboard(for one click clipboardfor VR user)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonClipboadWithUrlAdvancedToken_Click(object sender, EventArgs e)
+        private void ButtonClipboardWithUrlAdvancedToken_Click(object sender, EventArgs e)
         {
             try
             {

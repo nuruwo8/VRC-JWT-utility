@@ -35,9 +35,9 @@
             this.buttonFixedOneToken = new System.Windows.Forms.Button();
             this.groupBoxOneTokenResults = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.buttonClipboadTokenWithUrlForFixedToken_Click = new System.Windows.Forms.Button();
-            this.buttonClipboadTokenForFixedToken_Click = new System.Windows.Forms.Button();
-            this.buttonClipboadPublicKeyForFixedToken = new System.Windows.Forms.Button();
+            this.buttonClipboardTokenWithUrlForFixedToken_Click = new System.Windows.Forms.Button();
+            this.buttonClipboardTokenForFixedToken_Click = new System.Windows.Forms.Button();
+            this.buttonClipboardPublicKeyForFixedToken = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxTokenForFixedToken = new System.Windows.Forms.TextBox();
             this.textBoxPublicKeyForFixedToken = new System.Windows.Forms.TextBox();
@@ -51,8 +51,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxVrcName = new System.Windows.Forms.TextBox();
-            this.buttonClipboadWithUrlAdvancedToken = new System.Windows.Forms.Button();
-            this.buttonClipboadAdvancedToken = new System.Windows.Forms.Button();
+            this.buttonClipboardWithUrlAdvancedToken = new System.Windows.Forms.Button();
+            this.buttonClipboardAdvancedToken = new System.Windows.Forms.Button();
             this.textBoxVrcNameModeToken = new System.Windows.Forms.TextBox();
             this.groupBoxVrcNameKeys = new System.Windows.Forms.GroupBox();
             this.buttonclipboardAdvancedPublicKey = new System.Windows.Forms.Button();
@@ -123,9 +123,9 @@
             // groupBoxOneTokenResults
             // 
             this.groupBoxOneTokenResults.Controls.Add(this.label3);
-            this.groupBoxOneTokenResults.Controls.Add(this.buttonClipboadTokenWithUrlForFixedToken_Click);
-            this.groupBoxOneTokenResults.Controls.Add(this.buttonClipboadTokenForFixedToken_Click);
-            this.groupBoxOneTokenResults.Controls.Add(this.buttonClipboadPublicKeyForFixedToken);
+            this.groupBoxOneTokenResults.Controls.Add(this.buttonClipboardTokenWithUrlForFixedToken_Click);
+            this.groupBoxOneTokenResults.Controls.Add(this.buttonClipboardTokenForFixedToken_Click);
+            this.groupBoxOneTokenResults.Controls.Add(this.buttonClipboardPublicKeyForFixedToken);
             this.groupBoxOneTokenResults.Controls.Add(this.label2);
             this.groupBoxOneTokenResults.Controls.Add(this.textBoxTokenForFixedToken);
             this.groupBoxOneTokenResults.Controls.Add(this.textBoxPublicKeyForFixedToken);
@@ -152,41 +152,41 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Jwt Token (Tell only your members)";
             // 
-            // buttonClipboadTokenWithUrlForFixedToken_Click
+            // buttonClipboardTokenWithUrlForFixedToken_Click
             // 
-            this.buttonClipboadTokenWithUrlForFixedToken_Click.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonClipboadTokenWithUrlForFixedToken_Click.Location = new System.Drawing.Point(215, 587);
-            this.buttonClipboadTokenWithUrlForFixedToken_Click.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonClipboadTokenWithUrlForFixedToken_Click.Name = "buttonClipboadTokenWithUrlForFixedToken_Click";
-            this.buttonClipboadTokenWithUrlForFixedToken_Click.Size = new System.Drawing.Size(182, 32);
-            this.buttonClipboadTokenWithUrlForFixedToken_Click.TabIndex = 3;
-            this.buttonClipboadTokenWithUrlForFixedToken_Click.Text = "Clipboard with URL";
-            this.buttonClipboadTokenWithUrlForFixedToken_Click.UseVisualStyleBackColor = true;
-            this.buttonClipboadTokenWithUrlForFixedToken_Click.Click += new System.EventHandler(this.ButtonClipboadTokenWithUrlForFixedToken_Click);
+            this.buttonClipboardTokenWithUrlForFixedToken_Click.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonClipboardTokenWithUrlForFixedToken_Click.Location = new System.Drawing.Point(215, 587);
+            this.buttonClipboardTokenWithUrlForFixedToken_Click.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonClipboardTokenWithUrlForFixedToken_Click.Name = "buttonClipboardTokenWithUrlForFixedToken_Click";
+            this.buttonClipboardTokenWithUrlForFixedToken_Click.Size = new System.Drawing.Size(182, 32);
+            this.buttonClipboardTokenWithUrlForFixedToken_Click.TabIndex = 3;
+            this.buttonClipboardTokenWithUrlForFixedToken_Click.Text = "Clipboard with URL";
+            this.buttonClipboardTokenWithUrlForFixedToken_Click.UseVisualStyleBackColor = true;
+            this.buttonClipboardTokenWithUrlForFixedToken_Click.Click += new System.EventHandler(this.ButtonClipboardTokenWithUrlForFixedToken_Click);
             // 
-            // buttonClipboadTokenForFixedToken_Click
+            // buttonClipboardTokenForFixedToken_Click
             // 
-            this.buttonClipboadTokenForFixedToken_Click.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonClipboadTokenForFixedToken_Click.Location = new System.Drawing.Point(26, 587);
-            this.buttonClipboadTokenForFixedToken_Click.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonClipboadTokenForFixedToken_Click.Name = "buttonClipboadTokenForFixedToken_Click";
-            this.buttonClipboadTokenForFixedToken_Click.Size = new System.Drawing.Size(106, 32);
-            this.buttonClipboadTokenForFixedToken_Click.TabIndex = 3;
-            this.buttonClipboadTokenForFixedToken_Click.Text = "Clipboard";
-            this.buttonClipboadTokenForFixedToken_Click.UseVisualStyleBackColor = true;
-            this.buttonClipboadTokenForFixedToken_Click.Click += new System.EventHandler(this.ButtonClipboadTokenForFixedToken_Click);
+            this.buttonClipboardTokenForFixedToken_Click.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonClipboardTokenForFixedToken_Click.Location = new System.Drawing.Point(26, 587);
+            this.buttonClipboardTokenForFixedToken_Click.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonClipboardTokenForFixedToken_Click.Name = "buttonClipboardTokenForFixedToken_Click";
+            this.buttonClipboardTokenForFixedToken_Click.Size = new System.Drawing.Size(106, 32);
+            this.buttonClipboardTokenForFixedToken_Click.TabIndex = 3;
+            this.buttonClipboardTokenForFixedToken_Click.Text = "Clipboard";
+            this.buttonClipboardTokenForFixedToken_Click.UseVisualStyleBackColor = true;
+            this.buttonClipboardTokenForFixedToken_Click.Click += new System.EventHandler(this.ButtonClipboardTokenForFixedToken_Click);
             // 
-            // buttonClipboadPublicKeyForFixedToken
+            // buttonClipboardPublicKeyForFixedToken
             // 
-            this.buttonClipboadPublicKeyForFixedToken.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonClipboadPublicKeyForFixedToken.Location = new System.Drawing.Point(26, 294);
-            this.buttonClipboadPublicKeyForFixedToken.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonClipboadPublicKeyForFixedToken.Name = "buttonClipboadPublicKeyForFixedToken";
-            this.buttonClipboadPublicKeyForFixedToken.Size = new System.Drawing.Size(106, 32);
-            this.buttonClipboadPublicKeyForFixedToken.TabIndex = 3;
-            this.buttonClipboadPublicKeyForFixedToken.Text = "Clipboard";
-            this.buttonClipboadPublicKeyForFixedToken.UseVisualStyleBackColor = true;
-            this.buttonClipboadPublicKeyForFixedToken.Click += new System.EventHandler(this.ButtonClipboadPublicKeyForFixedToken_Click);
+            this.buttonClipboardPublicKeyForFixedToken.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonClipboardPublicKeyForFixedToken.Location = new System.Drawing.Point(26, 294);
+            this.buttonClipboardPublicKeyForFixedToken.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonClipboardPublicKeyForFixedToken.Name = "buttonClipboardPublicKeyForFixedToken";
+            this.buttonClipboardPublicKeyForFixedToken.Size = new System.Drawing.Size(106, 32);
+            this.buttonClipboardPublicKeyForFixedToken.TabIndex = 3;
+            this.buttonClipboardPublicKeyForFixedToken.Text = "Clipboard";
+            this.buttonClipboardPublicKeyForFixedToken.UseVisualStyleBackColor = true;
+            this.buttonClipboardPublicKeyForFixedToken.Click += new System.EventHandler(this.ButtonClipboardPublicKeyForFixedToken_Click);
             // 
             // label2
             // 
@@ -198,7 +198,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(340, 30);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Public key (Set your world Gimic)";
+            this.label2.Text = "Public key (Set your world Gimmick)";
             // 
             // textBoxTokenForFixedToken
             // 
@@ -291,8 +291,8 @@
             this.groupBoxVrcNameToken.Controls.Add(this.label7);
             this.groupBoxVrcNameToken.Controls.Add(this.label5);
             this.groupBoxVrcNameToken.Controls.Add(this.textBoxVrcName);
-            this.groupBoxVrcNameToken.Controls.Add(this.buttonClipboadWithUrlAdvancedToken);
-            this.groupBoxVrcNameToken.Controls.Add(this.buttonClipboadAdvancedToken);
+            this.groupBoxVrcNameToken.Controls.Add(this.buttonClipboardWithUrlAdvancedToken);
+            this.groupBoxVrcNameToken.Controls.Add(this.buttonClipboardAdvancedToken);
             this.groupBoxVrcNameToken.Controls.Add(this.textBoxVrcNameModeToken);
             this.groupBoxVrcNameToken.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBoxVrcNameToken.Location = new System.Drawing.Point(17, 419);
@@ -347,29 +347,29 @@
             this.textBoxVrcName.Size = new System.Drawing.Size(416, 37);
             this.textBoxVrcName.TabIndex = 17;
             // 
-            // buttonClipboadWithUrlAdvancedToken
+            // buttonClipboardWithUrlAdvancedToken
             // 
-            this.buttonClipboadWithUrlAdvancedToken.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonClipboadWithUrlAdvancedToken.Location = new System.Drawing.Point(203, 309);
-            this.buttonClipboadWithUrlAdvancedToken.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonClipboadWithUrlAdvancedToken.Name = "buttonClipboadWithUrlAdvancedToken";
-            this.buttonClipboadWithUrlAdvancedToken.Size = new System.Drawing.Size(182, 32);
-            this.buttonClipboadWithUrlAdvancedToken.TabIndex = 6;
-            this.buttonClipboadWithUrlAdvancedToken.Text = "Clipboard with URL";
-            this.buttonClipboadWithUrlAdvancedToken.UseVisualStyleBackColor = true;
-            this.buttonClipboadWithUrlAdvancedToken.Click += new System.EventHandler(this.ButtonClipboadWithUrlAdvancedToken_Click);
+            this.buttonClipboardWithUrlAdvancedToken.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonClipboardWithUrlAdvancedToken.Location = new System.Drawing.Point(203, 309);
+            this.buttonClipboardWithUrlAdvancedToken.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonClipboardWithUrlAdvancedToken.Name = "buttonClipboardWithUrlAdvancedToken";
+            this.buttonClipboardWithUrlAdvancedToken.Size = new System.Drawing.Size(182, 32);
+            this.buttonClipboardWithUrlAdvancedToken.TabIndex = 6;
+            this.buttonClipboardWithUrlAdvancedToken.Text = "Clipboard with URL";
+            this.buttonClipboardWithUrlAdvancedToken.UseVisualStyleBackColor = true;
+            this.buttonClipboardWithUrlAdvancedToken.Click += new System.EventHandler(this.ButtonClipboardWithUrlAdvancedToken_Click);
             // 
-            // buttonClipboadAdvancedToken
+            // buttonClipboardAdvancedToken
             // 
-            this.buttonClipboadAdvancedToken.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonClipboadAdvancedToken.Location = new System.Drawing.Point(25, 309);
-            this.buttonClipboadAdvancedToken.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonClipboadAdvancedToken.Name = "buttonClipboadAdvancedToken";
-            this.buttonClipboadAdvancedToken.Size = new System.Drawing.Size(106, 32);
-            this.buttonClipboadAdvancedToken.TabIndex = 7;
-            this.buttonClipboadAdvancedToken.Text = "Clipboard";
-            this.buttonClipboadAdvancedToken.UseVisualStyleBackColor = true;
-            this.buttonClipboadAdvancedToken.Click += new System.EventHandler(this.ButtonClipboadAdvancedToken_Click);
+            this.buttonClipboardAdvancedToken.Font = new System.Drawing.Font("メイリオ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonClipboardAdvancedToken.Location = new System.Drawing.Point(25, 309);
+            this.buttonClipboardAdvancedToken.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonClipboardAdvancedToken.Name = "buttonClipboardAdvancedToken";
+            this.buttonClipboardAdvancedToken.Size = new System.Drawing.Size(106, 32);
+            this.buttonClipboardAdvancedToken.TabIndex = 7;
+            this.buttonClipboardAdvancedToken.Text = "Clipboard";
+            this.buttonClipboardAdvancedToken.UseVisualStyleBackColor = true;
+            this.buttonClipboardAdvancedToken.Click += new System.EventHandler(this.ButtonClipboardAdvancedToken_Click);
             // 
             // textBoxVrcNameModeToken
             // 
@@ -421,7 +421,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(340, 30);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Public key (Set your world Gimic)";
+            this.label6.Text = "Public key (Set your world Gimmick)";
             // 
             // textBoxVrcNameModePublicKey
             // 
@@ -492,9 +492,9 @@
         private Button buttonFixedOneToken;
         private GroupBox groupBoxOneTokenResults;
         private Label label3;
-        private Button buttonClipboadTokenWithUrlForFixedToken_Click;
-        private Button buttonClipboadTokenForFixedToken_Click;
-        private Button buttonClipboadPublicKeyForFixedToken;
+        private Button buttonClipboardTokenWithUrlForFixedToken_Click;
+        private Button buttonClipboardTokenForFixedToken_Click;
+        private Button buttonClipboardPublicKeyForFixedToken;
         private Label label2;
         private TextBox textBoxTokenForFixedToken;
         private TextBox textBoxPublicKeyForFixedToken;
@@ -505,8 +505,8 @@
         private Label label7;
         private Label label5;
         private TextBox textBoxVrcName;
-        private Button buttonClipboadWithUrlAdvancedToken;
-        private Button buttonClipboadAdvancedToken;
+        private Button buttonClipboardWithUrlAdvancedToken;
+        private Button buttonClipboardAdvancedToken;
         private TextBox textBoxVrcNameModeToken;
         private GroupBox groupBoxVrcNameKeys;
         private Button buttonclipboardAdvancedPublicKey;
