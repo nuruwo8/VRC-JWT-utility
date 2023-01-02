@@ -18,7 +18,7 @@ Claims: iat (unix time when generate)
 Token expiration period: forever
 ";
         const string SPEC_VRC_NAME_TOKEN_TEXT = @"Algorithm: RSA (RS256) 2048bit
-Claims: aud (VrcName hashed by SHA256),
+Claims: vrcName (Hashed by SHA256),
              iat (unix time when generate)
 Token expiration period: forever
 ";
@@ -244,9 +244,9 @@ Token expiration period: forever
             var nowDateTime = DateTime.UtcNow;
             var hashedVrcName = GetSHA256Hash(ToUnixTime(nowDateTime).ToString() + vrcName);
             Debug.WriteLine(ToUnixTime(nowDateTime).ToString() + vrcName);
-            //generate token. aud claim , no exp (forever)
+            //generate token. vrcName claim , no exp (forever)
             var privateKey = File.ReadAllText(VRC_NAME_MODE_PRIVATE_KEY_PATH);
-            var claims = new Dictionary<string, object>() { { "aud", hashedVrcName } };
+            var claims = new Dictionary<string, object>() { { "vrcName", hashedVrcName } };
             var token = GenerateJwtToken(privateKey, claims, null, nowDateTime);
             textBoxVrcNameModeToken.Text = token.Replace("\n", "\r\n");
         }
