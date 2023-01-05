@@ -23,7 +23,7 @@ Claims: vrcName (Hashed by SHA256),
 Token expiration period: forever
 ";
         //In this web app, user can paste token to clipboard by one click. for utilize VR controller.
-        const string CLIPBOARD_BASE_URL = "https://nuruo789.github.io/web-clipboard-pasting/?t=";
+        const string CLIPBOARD_BASE_URL = "https://nuruwo8.github.io/web-clipboard-pasting/?t=";
 
         public VrcJwtUtil()
         {
