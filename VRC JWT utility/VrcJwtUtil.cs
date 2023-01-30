@@ -224,9 +224,9 @@ Token expiration period: forever
             //check VrcName
             var input = textBoxVrcName.Text;
             var vrcName = input.Trim();
-            if (vrcName.Length < 4)
+            if (vrcName.Length < 2)
             {
-                MessageBox.Show("VRChat name is too short.(available 4 to 15 characters)",
+                MessageBox.Show("VRChat name is too short.(available 2 to 15 characters)",
                 "Error",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
@@ -234,7 +234,7 @@ Token expiration period: forever
             }
             else if (vrcName.Length > 15)
             {
-                MessageBox.Show("VRChat name is too long.(available 4 to 15 characters)",
+                MessageBox.Show("VRChat name is too long.(available 2 to 15 characters)",
                 "Error",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
